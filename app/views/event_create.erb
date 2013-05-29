@@ -1,0 +1,23 @@
+<div>
+  <h1>Time to create an event:</h1>
+  
+  <form action="/events/create" method="post">
+    <input input="text" name="title" placeholder="Title">
+    <input input="date" name="date" placeholder="YYYY/MM/DD" required>
+    <input input="text" name="name" placeholder="Organizer Name">
+    <input input="text" name="email" placeholder="Contact Email">
+    <input type="submit" value="Submit">
+  </form>
+  
+  <% if @errors %>
+    <div id="errors">
+      <p>Errors are preventing submission:</p>
+      <ul>
+        <% @errors.each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+    </ul>
+    <div>
+  <% end %> 
+
+</div>
